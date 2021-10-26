@@ -1,0 +1,4 @@
+population=Genetic_Algorithm(individuals=20, genes=2000, expressed=20,mating_percentage=0.8, mutation_rate=0.02, termination=0.6)
+#print(population.population)
+
+celltype=5

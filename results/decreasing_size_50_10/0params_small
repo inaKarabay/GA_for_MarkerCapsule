@@ -1,0 +1,13 @@
+max_generations =35
+new_expression=5
+last_pop=35
+
+for cell in range(1,13):
+    celltype=cell
+    caps=get_multiple_prim_caps(np.genfromtxt('20_epochs/coup_gene_all__whole_dataset.csv', delimiter=","),1)[celltype]
+    print(caps)
+    last_population = np.genfromtxt(f"cell{cell}_{last_pop}population.csv", delimiter=",")
+    gene_pool = np.unique(last_population)
+    print("Gene Pool", gene_pool)
+    population=Genetic_Algorithm(individuals=30, genes=2000, expressed=new_expression,mating_percentage=0.6, mutation_rate=0.02, termination=1, pool=gene_pool)
+    generation=0

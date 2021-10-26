@@ -1,0 +1,12 @@
+
+
+max_generations =35
+
+#last population available for celltype
+pop=[20,20,20,15, 20,20,13,20,20,20,20,20,20]
+
+for cell in range(7,13):
+    celltype=cell
+    caps=get_multiple_prim_caps(np.genfromtxt('20_epochs/coup_gene_all__whole_dataset.csv', delimiter=","),1)[celltype]
+    print(caps)
+    population=Genetic_Algorithm(individuals=30, genes=2000, expressed=50,mating_percentage=0.6, mutation_rate=0.02, termination=1)
